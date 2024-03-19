@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
 project(tetris_SJH)
 
-add_executable(tetris_SJH src/main.c src/display_menu.c src/display_tetris.c)
+file(GLOB SRC_FILES "src/*.c")
+
+add_executable(tetris_SJH ${SRC_FILES})
 target_include_directories(tetris_SJH PUBLIC include)
 
 install(TARGETS tetris_SJH DESTINATION /usr/local/bin)
