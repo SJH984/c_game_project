@@ -1,13 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int block[4][4] = {
-    {1, 0, 0, 0},
-    {1, 0, 0, 0},
-    {1, 0, 0, 0},
-    {1, 0, 0, 0}};
-
-int tetris_table[21][10];
+#include "display_tetris.h"
 
 void display_tetris()
 {
@@ -17,7 +8,7 @@ void display_tetris()
     {
         for (int j = 0; j < 4; j++)
         {
-            if (block[i][j] == 0)
+            if (block[block_state][i][j] == 0)
             {
                 printf("o ");
             }

@@ -10,21 +10,28 @@ int display_menu();
 void display_tetris();
 int game;
 int update(int signum);
-int game start()
+int x = 3;
+int y = 0;
+int point = 0;
+
+int game_start()
 {
     // signal 설정
+    static struct itimerval timer;
     signal(SIGVTALRM, update);
     timer.it_value.tv_sec = 0;
     timer.it_value.tv_usec = 16667;
-    timer.it_value.tv_sec = 0;
-    timer.it_value.tv_usec = 16667;
+    timer.it_interval.tv_sec = 0;
+    timer.it_interval.tv_usec = 16667;
     setitimer(ITIMER_VIRTUAL, &timer, NULL);
-
-    if (game == GAME_START)
+    while (1)
     {
-        while(1)
+        if (game == GAME_END)
         {
-           
+            x = 3;
+            y = 0;
+            point = 0;
+            return 1;
         }
     }
     game = GAME_END;
@@ -37,8 +44,8 @@ int main()
     switch (menu)
     {
     case 1:
-        
-       menu = game_start();
+        game = GAME_START;
+        menu = game_start();
         break;
     case 2:
         printf("Search history\n");
