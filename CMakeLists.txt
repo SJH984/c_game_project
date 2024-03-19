@@ -6,4 +6,4 @@ target_include_directories(tetris_SJH PUBLIC include)
 
 install(TARGETS tetris_SJH DESTINATION /usr/local/bin)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include DESTINATION /usr/local/include)
-install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/ DESTINATON /usr/local/src)
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/ DESTINATION /usr/local/src)
