@@ -7,3 +7,8 @@ target_include_directories(tetris_SJH PUBLIC include)
 install(TARGETS tetris_SJH DESTINATION /usr/local/bin)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include DESTINATION /usr/local/include)
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/src/ DESTINATION /usr/local/src)
+
+ set(CPACK_GENERATOR "DEB")
+ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "SHH")
+ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Tetris game")
+ include(CPack)
