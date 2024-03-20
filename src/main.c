@@ -1,3 +1,12 @@
+/**
+ * @file main.c
+ * @brief 테트리스 게임을 실행하는 메인 함수
+ * @author 신지환
+ * @date 2023-03-20
+ * @details 이 게임은 signal을 사용해서 1/60초마다 화면을 갱신 하는 것을 이용한
+ * 프로그램입니다.
+ */ 
+
 #include <stdio.h>
 #include <signal.h>
 #include <sys/time.h>
@@ -14,7 +23,12 @@ int x = 3;
 int y = 0;
 int point = 0;
 extern int tetris_table[21][10];
-
+/**
+ * @brief 이 함수는 시그널을 설정하는 함수입니다. 
+ * @param signum signal 에 연결된 함수에 전달되는 인초자
+ * @param timer signal을 설정하는 구조체 여기에 갱신 시간을 정한다.
+ * @details 이 함수에서는 x, y, point 값을 초기화 시킨다.
+*/
 int game_start()
 {
     // signal 설정
